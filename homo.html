@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			
+			html * {
+				margin:0;
+				padding:0;
+			}
+			
+		  #container { 
+			 background-color: #F55A00;
+			 width: 100%;
+			 height: 100%
+			}
+			
+			#content {
+				width: 80%;
+				height: 200px;
+				margin: 0 auto;
+				background-color: #fff;
+			}
+			
+			#content h1 {
+				width:20%;
+				float:left;
+			}	
+			#content form {
+				width: 80%;
+				float:left;
+			}
+			
+			#footer {
+				width: 100%;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+	   <div id="content">
+	    <h1>
+	      <a>Currency Convertor</a>
+	    </h1>
+	    <form name="currency_convert" id="cc">
+	    <ul>  
+	      <li>
+	       <label for="amount">Amount</label>
+	       <input id="amount" name="amount" type="text" />
+	      </li>
+	      <li>
+	       <label for="currency_from">Currency From</label>
+	       <input id="currency_from" name="currency_from" />
+	      </li>
+	      <li>
+	       <label for="currency_to">Currency To</label>
+	       <input id="currency_to" name="currency_to" />
+	      </li>
+	      <li>
+	       <input type="submit" id="submit" value="Convert" />
+	      </li>
+	      <li id="convert-result">
+	        <?php if ($output): ?>
+	          <?=$output?>
+	        <?php endif;?>
+	      </li>
+	    </ul>
+	    </form>
+	    
+	    
+	      <div id="convert-result">
+	        <span><? //$output?></span>
+	      </div>  
+	    <?php //endif; ?>
+	  </div> <!-- /#content -->
+	  </div> <!-- /#container -->   
+   <div id="footer">
+  <p>
+    Another <a href="http://camerontod.com">Cameron Tod</a> joint. Get the source <a href="">here</a>.
+  </p>  
+  </div>
+			
+		</div>
+		
+	</body>
+</html>

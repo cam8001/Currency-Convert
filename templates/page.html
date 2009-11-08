@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Conforming XHTML 1.0 Strict Template</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="/soap/js/currency.js"></script>
+<script type="text/javascript" src="/soap/library/js/jquery-autocomplete/jquery.autocomplete.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/soap/css/style.css" media="screen" />
+
+</head>
+
+<body>
+	<div id="container">
+		<div id="content">
+		<div id="currency-convertor">
+		<h1>
+			<a>Currency Convertor</a>
+		</h1>
+		<form name="currency_convert" id="cc">
+		<ul>	
+		  <li>
+			 <label for="amount">Amount</label>
+			 <input tabindex='1' id="amount" name="amount" type="text" />
+			</li>
+			<li>
+			 <label for="currency_from">Currency From</label>
+			 <input tabindex='2' id="currency_from" name="currency_from" />
+			</li>
+			<li>
+			 <label for="currency_to">Currency To</label>
+			 <input tabindex='3' id="currency_to" name="currency_to" />
+			</li>
+			<li>
+			 <input tabindex='4' type="submit" id="submit" value="Convert" />
+			</li>
+			<!--
+			<li id="convert-result">
+				<?php if ($output): ?>
+				  <?=$output?>
+				<?php endif;?>
+			</li>
+			-->
+		</ul>
+		</form>
+		
+		</div> <!-- /#currency-convertor -->
+  </div> <!-- /#content -->	
+  </div> <!-- /#container -->
+	
+	  <div id="convert-result">
+        <span><? //$output?></span>
+   </div>  
+	 
+	 <div id="convert-history">
+	 	<ul>
+	 		
+	 	</ul>
+	 </div>
+			
+	 <div id="footer">
+  <p>
+    Another <a href="http://camerontod.com">Cameron Tod</a> joint. Get the source <a href="">here</a>.
+  </p>  
+<!-- Google Maps Element Code -->
+<!--<iframe frameborder="0" marginwidth="0" marginheight="0" border="0" style="border:0;margin:0;width:300px;height:250px;" src="http://www.google.com/uds/modules/elements/mapselement/iframe.html?maptype=roadmap&amp;latlng=-37.83297152392784%2C144.96889114379883&amp;mlatlng=-37.83306%2C144.968315&amp;maddress1=88%20Park%20St&amp;maddress2=South%20Melbourne%20VIC%203205%2C%20Australia&amp;zoom=12&amp;mtitle=We're%20her" scrolling="no" allowtransparency="true"></iframe> -->
+</body>
+</html>

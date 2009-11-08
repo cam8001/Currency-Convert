@@ -1,0 +1,65 @@
+<?php
+
+class CurrencyConvert {
+	
+	
+	private $client; // This is the webservice provided class.
+  private $webServiceUrl = 'http://webservice.webserviceshare.com/currencyconverter/rates.asmx?WSDL';
+
+  private $webServiceKey = 'c2e7dbbb-4ffa-4fb8-a6a5-797bae45d636';
+	
+	public $currencyFrom;
+	public $currencyTo;
+  public $supportedCurrencies;
+	
+	function __construct() {
+		$this->client = new SoapClient($this->webServiceUrl);
+	}
+	
+	public function getFunctions() {
+		return $this->client->__getFunctions();
+	}
+	
+	public function getTypes() {
+    return $this->client->__getTypes();
+  }
+
+
+  public function convert($amount, $from, $to) {
+  	// First, set up the convesion rates
+		$this->getRates($from, $to);
+		
+		// Now do the calculation
+		return $amount * $this->currencyTo->Amount;
+		
+		
+  }
+	
+	private function getRates($from, $to) {
+		
+		$params = array(
+		  'Key' => (string)$this->webServiceKey,
+			'CurrencyFrom' => (string) $from,
+			'CurrencyTo' => (string) $to
+			
+		);
+		
+		$result = $this->client->getRates($params)->GetRatesResult;
+		
+		$this->currencyFrom = $result->CurrencyFrom;
+		$this->currencyTo = $result->CurrencyTo->CurrencyToRow;
+	}
+	
+	public function supportedCurrencies() {
+		if ( !$this->supportedCurrencies) {
+			$result = $this->client->GetSupportedCurrencies();
+			$this->supportedCurrencies = $result->GetSupportedCurrenciesResult->CurrencyListRow;
+			pecho($this->supportedCurrencies);
+		}
+	}
+	
+	
+	
+	
+	
+}
