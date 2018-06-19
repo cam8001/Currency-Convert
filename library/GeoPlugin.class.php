@@ -88,7 +88,7 @@ class GeoPlugin {
 	}
 	
 	function fetch($host) {
-
+		$response = false;	
 		if ( function_exists('curl_init') ) {
 						
 			//use cURL to fetch data
